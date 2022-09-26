@@ -13,7 +13,7 @@
     <h1>todo app with server</h1>
 
     <form onsubmit="postTodo(); return false">
-        num1: <input id="num1" type="text" required>
+        num1: <input id="todo" type="text" required>
         <br>
         <button type="submit">Add</button>
 
@@ -24,12 +24,16 @@
         function postTodo() {
             let todoText = document.querySelector("#todo").value
 
-            axios.post('htpp://localhost:3000/todo', {
+            axios.post(`http://localhost:3000/todo`, {
                     text: todoText
 
                 })
                 .then(function(response) {
                     console.log(response.data);
+                    document.querySelector("#result").innerHTML =""
+                    response.data.data.map(eachtodo => {
+                        document.querySelector("#result").innerHTML += eachtodo + '<br>'
+                    })
 
                 })
                 .catch(function(error) {
@@ -37,8 +41,9 @@
                     console.log(error);
 
                 })
+            }
 
-        }
+
     </script>
 
 </body>
