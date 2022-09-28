@@ -49,6 +49,21 @@
                 })
             }
 
+            axios.get(`https://energetic-cyan-seal.cyclic.app/todos`)
+                .then(function(response) {
+                    console.log(response.data);
+                    document.querySelector("#result").innerHTML =""
+                    response.data.data.map(eachtodo => {
+                        document.querySelector("#result").innerHTML += eachtodo + '<br>'
+                    })
+
+                })
+                .catch(function(error) {
+                    //handle error
+                    console.log(error);
+
+                })
+
 
     </script>
 
