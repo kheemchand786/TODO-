@@ -9,7 +9,7 @@ let todos = [];
 
 
 app.use(express.json());
-app.use(cros())
+app.use(cors())
 app.post('/todo', (req, res) => {
 
     todos.push(req.body.text);

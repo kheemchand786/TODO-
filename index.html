@@ -6,11 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
+    <div class="heading">
     <h1>todo app with server</h1>
+</div>
+
 
     <form onsubmit="postTodo(); return false">
         num1: <input id="todo" type="text" required>
@@ -18,7 +22,9 @@
         <button type="submit">Add</button>
 
     </form>
+    <div class="result"> 
     <h3 id="result"> </h3>
+</div>
 
     <script>
         function postTodo() {
